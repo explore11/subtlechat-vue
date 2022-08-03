@@ -64,17 +64,13 @@ export default {
       if (this.currentSession.username=="群聊"){
         console.log(this.content);
         this.$store.state.stomp.send("/ws/groupChat",{},JSON.stringify(msgObj));
-      }
-      //给机器人发送消息
-      if (this.currentSession.username=="机器人"){
+      }else if(this.currentSession.username=="机器人"){//给机器人发送消息
         msgObj.fromNickname=this.$store.state.currentUser.nickname;
         msgObj.to='机器人';
         this.$store.state.stomp.send("/ws/robotChat",{},JSON.stringify(msgObj));
         //保存该条记录到session
         this.$store.commit('addMessage',msgObj);
-      }
-      //发送私聊消息
-      else{
+      }else{ //发送私聊消息
         msgObj.from=this.$store.state.currentUser.username;
         msgObj.fromNickname=this.$store.state.currentUser.nickname;
         msgObj.to=this.currentSession.username;

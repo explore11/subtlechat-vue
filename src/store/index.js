@@ -158,6 +158,10 @@ const store =  new Vuex.Store({
         /**
          * 订阅私人消息
          */
+        // 如果以/user/用户id/queue/chat使用该样式
+        // var userinfo = window.sessionStorage.getItem('user')
+        // let uid=JSON.parse(userinfo).id
+        // context.state.stomp.subscribe('/user/'+uid+'/queue/chat',msg=>{
         context.state.stomp.subscribe('/user/queue/chat',msg=>{
           //接收到的消息数据
           let receiveMsg=JSON.parse(msg.body);
