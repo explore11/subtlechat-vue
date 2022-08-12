@@ -1,6 +1,7 @@
 # 项目介绍
 微言聊天室基于前后端分离，项目采用 SpringBoot+Vue 开发，当前项目是系统的Vue前端SPA工程
 
+原项目来自https://github.com/JustCoding-Hai，该项目是再此工程上进行的再一次开发
 项目预览地址：http://www.javahai.top/index.html
 
 前端工程源码地址：https://github.com/JustCoding-Hai/subtlechat-vue
